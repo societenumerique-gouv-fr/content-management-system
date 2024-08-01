@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "outils_et_dispositifs",
+  "info": {
+    "singularName": "outils-et-dispositif",
+    "pluralName": "outils-et-dispositifs",
+    "displayName": "Outils-et-dispositifs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre_de_la_carte": {
+      "type": "string"
+    },
+    "type_element": {
+      "type": "enumeration",
+      "enum": [
+        "Outil",
+        "Dispositif"
+      ],
+      "default": "Outil",
+      "required": true
+    },
+    "Composants": {
+      "type": "dynamiczone",
+      "components": [
+        "composants.accordeon",
+        "composants.ancre",
+        "composants.bandeau-titre",
+        "composants.bloc-de-breves",
+        "composants.bloc-de-texte",
+        "composants.bloc-deroulant",
+        "composants.bouton",
+        "composants.carte-deroulante",
+        "composants.carte-horizontale",
+        "composants.carte-telechargement",
+        "composants.carte-verticale",
+        "composants.champ-de-blocs",
+        "composants.citation",
+        "composants.iframe",
+        "composants.groupe-de-boutons",
+        "composants.fin-de-section",
+        "composants.media",
+        "composants.section",
+        "composants.telechargement",
+        "composants.titre",
+        "composants.mise-en-avant",
+        "composants.lien-hypertexte"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "texte_de_la_carte": {
+      "type": "text"
+    },
+    "autres_liaisons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "composants.liaison"
+    },
+    "liaison_avec": {
+      "type": "enumeration",
+      "enum": [
+        "axe-1",
+        "axe-2",
+        "axe-3",
+        "axe-4",
+        "engagement-transverse"
+      ],
+      "default": "axe-1",
+      "required": true
+    }
+  }
+}

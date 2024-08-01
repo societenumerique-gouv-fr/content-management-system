@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_composants_bloc_de_rapports_de_recherches",
+  "info": {
+    "displayName": "Bloc-de-rapports-de-recherches",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cartes_max_par_page": {
+      "type": "enumeration",
+      "enum": [
+        "Quatre",
+        "Six",
+        "Huit"
+      ],
+      "default": "Quatre",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "collectionName": "components_composants_iframes",
+  "info": {
+    "displayName": "Iframe",
+    "icon": "expand",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "taille_horizontale": {
+      "type": "enumeration",
+      "enum": [
+        "px300",
+        "px600",
+        "px900"
+      ],
+      "required": true,
+      "default": "px600"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Centre"
+      ],
+      "required": true,
+      "default": "Centre"
+    },
+    "source": {
+      "type": "string",
+      "regex": "^\\S+$",
+      "required": true
+    },
+    "bords": {
+      "type": "enumeration",
+      "enum": [
+        "Arrondis",
+        "Carrés"
+      ],
+      "default": "Carrés",
+      "required": true
+    },
+    "taille_verticale": {
+      "type": "enumeration",
+      "enum": [
+        "py300",
+        "py600",
+        "py900"
+      ],
+      "default": "py600",
+      "required": true
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

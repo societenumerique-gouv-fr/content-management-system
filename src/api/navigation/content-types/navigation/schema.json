@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navigations",
+  "info": {
+    "singularName": "navigation",
+    "pluralName": "navigations",
+    "displayName": "Barre-de-Navigation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lien_navbar": {
+      "type": "dynamiczone",
+      "components": [
+        "composants.lien",
+        "composants.deroulant-navbar"
+      ],
+      "max": 1
+    },
+    "titre": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "default": "Mon Onglet"
+    }
+  }
+}

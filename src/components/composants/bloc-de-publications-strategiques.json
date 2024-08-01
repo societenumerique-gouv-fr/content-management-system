@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_composants_bloc_de_publications_strategiques",
+  "info": {
+    "displayName": "Bloc-de-publications-strategiques",
+    "icon": "stack",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cartes_max_par_page": {
+      "type": "enumeration",
+      "enum": [
+        "Quatre",
+        "Six",
+        "Huit"
+      ],
+      "required": true,
+      "default": "Quatre"
+    }
+  }
+}

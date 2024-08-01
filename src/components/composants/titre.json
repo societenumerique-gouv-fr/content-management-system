@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_composants_titres",
+  "info": {
+    "displayName": "Titre",
+    "icon": "strikeThrough",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "default": "Votre Titre"
+    },
+    "taille": {
+      "type": "enumeration",
+      "enum": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6"
+      ],
+      "default": "h3",
+      "required": true
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Centre",
+        "Droite"
+      ],
+      "required": true,
+      "default": "Gauche"
+    },
+    "page_cible": {
+      "type": "string",
+      "regex": "^\\S+$",
+      "required": false
+    },
+    "titre_du_lien": {
+      "type": "string"
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

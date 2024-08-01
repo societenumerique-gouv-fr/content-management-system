@@ -1,0 +1,66 @@
+{
+  "collectionName": "components_composants_carte_horizontales",
+  "info": {
+    "displayName": "Carte-horizontale",
+    "icon": "picture",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "default": "Titre"
+    },
+    "lien": {
+      "type": "string",
+      "default": "https://www.google.fr",
+      "regex": "^\\S+$"
+    },
+    "titre_du_lien": {
+      "type": "string",
+      "default": "Cliquez ici"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "labels": {
+      "type": "component",
+      "repeatable": true,
+      "component": "composants.label"
+    },
+    "texte_en_valeur": {
+      "type": "string",
+      "maxLength": 24
+    },
+    "texte": {
+      "type": "text"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Centre"
+      ],
+      "default": "Gauche",
+      "required": true
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

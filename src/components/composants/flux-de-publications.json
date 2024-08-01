@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_composants_flux_de_publications",
+  "info": {
+    "displayName": "flux-de-publications",
+    "icon": "information",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

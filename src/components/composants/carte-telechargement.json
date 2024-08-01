@@ -1,0 +1,82 @@
+{
+  "collectionName": "components_composants_carte_telechargements",
+  "info": {
+    "displayName": "Carte-telechargement",
+    "icon": "grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type_de_carte": {
+      "type": "enumeration",
+      "enum": [
+        "Classique",
+        "Tuile"
+      ],
+      "default": "Tuile",
+      "required": true
+    },
+    "image_de_la_carte": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "titre_de_la_carte": {
+      "type": "string"
+    },
+    "description_de_la_carte": {
+      "type": "string"
+    },
+    "media_a_telecharger": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Centre",
+        "Droite"
+      ],
+      "required": true,
+      "default": "Centre"
+    },
+    "taille": {
+      "type": "enumeration",
+      "enum": [
+        "Petit",
+        "Grand"
+      ],
+      "default": "Grand",
+      "required": true
+    },
+    "label": {
+      "type": "component",
+      "repeatable": false,
+      "component": "composants.label"
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

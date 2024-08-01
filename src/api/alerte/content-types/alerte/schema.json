@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "alertes",
+  "info": {
+    "singularName": "alerte",
+    "pluralName": "alertes",
+    "displayName": "Alerte",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "message": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "collectionName": "components_composants_carte_verticales",
+  "info": {
+    "displayName": "Carte-verticale",
+    "icon": "filePdf",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "default": "Titre"
+    },
+    "lien": {
+      "type": "string",
+      "default": "https://www.google.fr",
+      "regex": "^\\S+$"
+    },
+    "titre_du_lien": {
+      "type": "string",
+      "default": "Cliquez ici"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Centre"
+      ],
+      "required": true,
+      "default": "Centre"
+    },
+    "labels": {
+      "type": "component",
+      "repeatable": true,
+      "component": "composants.label"
+    },
+    "taille": {
+      "type": "enumeration",
+      "enum": [
+        "Petit",
+        "Moyen",
+        "Grand"
+      ],
+      "required": true,
+      "default": "Moyen"
+    },
+    "texte_en_valeur": {
+      "type": "string"
+    },
+    "texte": {
+      "type": "text"
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

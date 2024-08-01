@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_composants_fin_de_sections",
+  "info": {
+    "displayName": "Fin-de-Section",
+    "icon": "filter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "default": "Fin de section"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_composants_flux_dispositifs",
+  "info": {
+    "displayName": "Flux-dispositifs",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type_element": {
+      "type": "enumeration",
+      "enum": [
+        "flux-dispositifs"
+      ],
+      "default": "flux-dispositifs",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "collectionName": "components_composants_boutons",
+  "info": {
+    "displayName": "Bouton",
+    "icon": "exit",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "texte": {
+      "type": "string",
+      "required": true,
+      "default": "Mon Bouton"
+    },
+    "page_cible": {
+      "type": "string",
+      "regex": "^\\S+$",
+      "required": true,
+      "default": "https://"
+    },
+    "couleur": {
+      "type": "enumeration",
+      "enum": [
+        "bleu",
+        "blanc"
+      ],
+      "default": "bleu",
+      "required": true
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Centre",
+        "Droite"
+      ],
+      "default": "Centre",
+      "required": true
+    },
+    "taille": {
+      "type": "enumeration",
+      "enum": [
+        "Petit",
+        "Moyen",
+        "Grand"
+      ],
+      "default": "Moyen",
+      "required": true
+    },
+    "afficher_icone": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "position_icone": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Droite"
+      ],
+      "default": "Gauche",
+      "required": true
+    },
+    "sans_contour": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

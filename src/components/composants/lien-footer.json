@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_composants_lien_footers",
+  "info": {
+    "displayName": "lien-footer",
+    "icon": "arrowRight"
+  },
+  "options": {},
+  "attributes": {
+    "titre_du_lien": {
+      "type": "string",
+      "required": true,
+      "default": "Cliquez ici"
+    },
+    "url": {
+      "type": "string",
+      "default": "https://www.google.fr",
+      "required": true,
+      "regex": "^\\S+$"
+    }
+  }
+}

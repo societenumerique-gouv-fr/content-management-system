@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Pages",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom_de_page": {
+      "type": "string",
+      "unique": true,
+      "regex": "^\\S+$"
+    },
+    "Composants": {
+      "type": "dynamiczone",
+      "components": [
+        "composants.bloc-de-texte",
+        "composants.titre",
+        "composants.bouton",
+        "composants.section",
+        "composants.fin-de-section",
+        "composants.flux-de-publications",
+        "composants.flux-actualite",
+        "composants.champ-de-blocs",
+        "composants.navigation",
+        "composants.ancre",
+        "composants.bloc-de-breves",
+        "composants.citation",
+        "composants.bloc-de-publications-strategiques",
+        "composants.bloc-de-rapports-de-recherches",
+        "composants.carte-horizontale",
+        "composants.carte-verticale",
+        "composants.media",
+        "composants.mise-en-avant",
+        "composants.lien-hypertexte",
+        "composants.telechargement",
+        "composants.carte-telechargement",
+        "composants.groupe-de-boutons",
+        "composants.accordeon",
+        "composants.iframe",
+        "composants.carte-deroulante",
+        "composants.bandeau-titre"
+      ]
+    }
+  }
+}

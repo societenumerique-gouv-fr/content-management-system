@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_composants_telechargements",
+  "info": {
+    "displayName": "Liens-telechargement",
+    "icon": "exit",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre_de_la_liste": {
+      "type": "string"
+    },
+    "Lien_telechargement": {
+      "type": "component",
+      "repeatable": true,
+      "component": "composants.lien-telechargement"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Centre",
+        "Droite"
+      ],
+      "default": "Centre",
+      "required": true
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

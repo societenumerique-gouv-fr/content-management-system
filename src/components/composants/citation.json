@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_composants_citations",
+  "info": {
+    "displayName": "Citation",
+    "icon": "quote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "citation": {
+      "type": "text"
+    },
+    "auteur": {
+      "type": "string"
+    },
+    "contexte": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

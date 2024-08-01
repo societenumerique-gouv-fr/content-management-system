@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_composants_lien_telechargements",
+  "info": {
+    "displayName": "Lien-telechargement",
+    "icon": "exit",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "texte_du_lien": {
+      "type": "string"
+    },
+    "media_a_telecharger": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "actif": {
+      "type": "enumeration",
+      "enum": [
+        "Oui",
+        "Non"
+      ],
+      "required": true,
+      "default": "Oui"
+    }
+  }
+}

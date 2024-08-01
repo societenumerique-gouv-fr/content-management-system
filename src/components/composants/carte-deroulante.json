@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_composants_carte_deroulantes",
+  "info": {
+    "displayName": "Carte-deroulante",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "texte_du_bouton": {
+      "type": "string"
+    },
+    "lien_du_bouton": {
+      "type": "string",
+      "regex": "^\\S+$"
+    },
+    "texte": {
+      "type": "richtext"
+    },
+    "bloc_deroulant": {
+      "type": "component",
+      "repeatable": true,
+      "component": "composants.bloc-deroulant"
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

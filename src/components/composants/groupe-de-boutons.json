@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_composants_groupe_de_boutons",
+  "info": {
+    "displayName": "Groupe-de-boutons",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "groupe_de_boutons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "composants.bouton",
+      "max": 3,
+      "min": 1
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Centre",
+        "Droite"
+      ],
+      "required": true,
+      "default": "Centre"
+    },
+    "espacement_entre_les_boutons": {
+      "type": "enumeration",
+      "enum": [
+        "px 4",
+        "px 8",
+        "px 12",
+        "px 16"
+      ],
+      "default": "px 8",
+      "required": true
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

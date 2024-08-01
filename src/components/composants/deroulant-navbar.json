@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_composants_deroulant_navbars",
+  "info": {
+    "displayName": "Deroulant-Navbar",
+    "icon": "grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre_du_menu": {
+      "type": "string",
+      "required": true,
+      "default": "Titre du menu"
+    },
+    "liens": {
+      "type": "component",
+      "repeatable": true,
+      "component": "composants.lien"
+    }
+  }
+}

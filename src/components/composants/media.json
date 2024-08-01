@@ -1,0 +1,81 @@
+{
+  "collectionName": "components_composants_media",
+  "info": {
+    "displayName": "Media",
+    "icon": "landscape",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "taille": {
+      "type": "enumeration",
+      "enum": [
+        "Petit",
+        "Moyen",
+        "Grand"
+      ],
+      "default": "Moyen",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "default": "Votre description"
+    },
+    "lien_du_label": {
+      "type": "string"
+    },
+    "titre_du_label": {
+      "type": "string"
+    },
+    "transcription": {
+      "type": "text"
+    },
+    "transcription_ouverte": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Centre"
+      ],
+      "required": true,
+      "default": "Centre"
+    },
+    "lien_video": {
+      "type": "string"
+    },
+    "afficher_transcription": {
+      "type": "enumeration",
+      "enum": [
+        "Oui",
+        "Non"
+      ],
+      "default": "Oui",
+      "required": true
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

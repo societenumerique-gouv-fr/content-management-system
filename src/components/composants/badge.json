@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_composants_badges",
+  "info": {
+    "displayName": "Badge",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "texte": {
+      "type": "string"
+    },
+    "couleur": {
+      "type": "enumeration",
+      "enum": [
+        "vert",
+        "rouge",
+        "bleu",
+        "rose",
+        "beige"
+      ],
+      "default": "vert",
+      "required": true
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "gauche",
+        "centre",
+        "droite"
+      ],
+      "required": true,
+      "default": "centre"
+    }
+  }
+}

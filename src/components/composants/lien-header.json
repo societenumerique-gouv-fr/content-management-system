@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_composants_lien_headers",
+  "info": {
+    "displayName": "lien-header",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre_du_lien": {
+      "type": "string"
+    },
+    "page_cible": {
+      "type": "string"
+    },
+    "pictogramme_remixicon": {
+      "type": "text"
+    }
+  }
+}

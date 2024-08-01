@@ -14,7 +14,7 @@ jobs:
         id: prepare
         uses: actions/checkout@v4
 
-      - name: Login to Scaleway Website container registry
+      - name: Login to Scaleway content-management-system container registry
         id: login
         uses: docker/login-action@v3
         with:
@@ -22,12 +22,12 @@ jobs:
           username: _json_key
           password: ${{ secrets.SCW_SECRET_KEY }}
 
-      - name: Build and push Website Docker image
+      - name: Build and push content-management-system Docker image
         id: push
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.SCW_CONTAINER_REGISTRY }}/website:latest
+          tags: ${{ secrets.SCW_CONTAINER_REGISTRY }}/content-management-system:latest
           build-args: NEXT_PUBLIC_STRAPI_URL=${{ secrets.NEXT_PUBLIC_STRAPI_URL }}
 
   run-container:

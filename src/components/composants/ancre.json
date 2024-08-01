@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_composants_ancres",
+  "info": {
+    "displayName": "Ancre",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ancre": {
+      "type": "string"
+    },
+    "titre": {
+      "type": "string"
+    }
+  }
+}

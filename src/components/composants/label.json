@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_composants_labels",
+  "info": {
+    "displayName": "Label",
+    "icon": "bold",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre_du_label": {
+      "type": "string",
+      "default": "Mon label",
+      "required": true
+    },
+    "couleur_du_label": {
+      "type": "enumeration",
+      "enum": [
+        "Défaut"
+      ],
+      "default": "Défaut",
+      "required": true
+    }
+  }
+}

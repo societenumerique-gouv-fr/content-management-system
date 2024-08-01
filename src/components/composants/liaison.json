@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_composants_liaisons",
+  "info": {
+    "displayName": "liaison",
+    "icon": "arrowRight",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "liaison": {
+      "type": "enumeration",
+      "enum": [
+        "axe-1",
+        "axe-2",
+        "axe-3",
+        "axe-4",
+        "engagement-transverse"
+      ],
+      "default": "axe-1",
+      "required": true
+    },
+    "titre": {
+      "type": "string",
+      "default": "Mon axe",
+      "required": true
+    }
+  }
+}

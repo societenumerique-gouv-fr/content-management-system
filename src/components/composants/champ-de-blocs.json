@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_composants_champ_de_blocs",
+  "info": {
+    "displayName": "Champ-de-blocs",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "Bloc_simple": {
+      "type": "component",
+      "repeatable": true,
+      "component": "composants.bloc-simple"
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

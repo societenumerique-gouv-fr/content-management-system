@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_composants_mise_en_avants",
+  "info": {
+    "displayName": "Mise-en-avant",
+    "icon": "expand",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "texte": {
+      "type": "text"
+    },
+    "afficher_pictogramme": {
+      "type": "boolean"
+    },
+    "titre_du_bouton": {
+      "type": "string"
+    },
+    "lien_du_bouton": {
+      "type": "string",
+      "regex": "^\\S+$"
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    },
+    "pictogramme_remixicon": {
+      "type": "text"
+    }
+  }
+}

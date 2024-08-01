@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rapports_de_recherches",
+  "info": {
+    "singularName": "rapport-de-recherche",
+    "pluralName": "rapports-de-recherches",
+    "displayName": "Etudes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre_de_la_carte": {
+      "type": "string"
+    },
+    "composants": {
+      "type": "dynamiczone",
+      "components": [
+        "composants.bloc-de-texte",
+        "composants.bouton",
+        "composants.champ-de-blocs",
+        "composants.fin-de-section",
+        "composants.section",
+        "composants.titre",
+        "composants.citation",
+        "composants.carte-horizontale",
+        "composants.carte-verticale",
+        "composants.media",
+        "composants.mise-en-avant",
+        "composants.lien-hypertexte",
+        "composants.telechargement",
+        "composants.carte-telechargement",
+        "composants.groupe-de-boutons",
+        "composants.accordeon",
+        "composants.iframe",
+        "composants.carte-deroulante",
+        "composants.bandeau-titre"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "etude"
+      ],
+      "default": "etude",
+      "required": true
+    },
+    "texte_de_la_carte": {
+      "type": "text"
+    }
+  }
+}

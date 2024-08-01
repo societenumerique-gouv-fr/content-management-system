@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_composants_bloc_de_textes",
+  "info": {
+    "displayName": "bloc_de_texte",
+    "icon": "strikeThrough",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Centre"
+      ],
+      "required": true,
+      "default": "Gauche"
+    },
+    "texte": {
+      "type": "richtext"
+    },
+    "tabulation": {
+      "type": "enumeration",
+      "enum": [
+        "Aucune",
+        "Petite",
+        "Moyenne",
+        "Grande"
+      ],
+      "default": "Aucune",
+      "required": true
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

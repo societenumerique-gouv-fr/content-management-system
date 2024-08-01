@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_composants_bloc_deroulants",
+  "info": {
+    "displayName": "Bloc-deroulant",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "texte_du_label": {
+      "type": "string"
+    },
+    "texte": {
+      "type": "richtext"
+    }
+  }
+}

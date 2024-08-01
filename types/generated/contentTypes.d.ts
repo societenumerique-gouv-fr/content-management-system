@@ -590,53 +590,6 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
-export interface PluginI18NLocale extends Schema.CollectionType {
-  collectionName: 'i18n_locale';
-  info: {
-    singularName: 'locale';
-    pluralName: 'locales';
-    collectionName: 'locales';
-    displayName: 'Locale';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    name: Attribute.String &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 50;
-        },
-        number
-      >;
-    code: Attribute.String & Attribute.Unique;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::i18n.locale',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::i18n.locale',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUsersPermissionsPermission
   extends Schema.CollectionType {
   collectionName: 'up_permissions';
@@ -788,6 +741,633 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface PluginI18NLocale extends Schema.CollectionType {
+  collectionName: 'i18n_locale';
+  info: {
+    singularName: 'locale';
+    pluralName: 'locales';
+    collectionName: 'locales';
+    displayName: 'Locale';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    code: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAlerteAlerte extends Schema.SingleType {
+  collectionName: 'alertes';
+  info: {
+    singularName: 'alerte';
+    pluralName: 'alertes';
+    displayName: 'Alerte';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    message: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::alerte.alerte',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::alerte.alerte',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAxeAxe extends Schema.CollectionType {
+  collectionName: 'axes';
+  info: {
+    singularName: 'axe';
+    pluralName: 'axes';
+    displayName: 'Axes';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre: Attribute.String;
+    Composants: Attribute.DynamicZone<
+      [
+        'composants.accordeon',
+        'composants.ancre',
+        'composants.bandeau-titre',
+        'composants.bloc-de-texte',
+        'composants.bloc-deroulant',
+        'composants.bouton',
+        'composants.carte-deroulante',
+        'composants.carte-horizontale',
+        'composants.carte-telechargement',
+        'composants.champ-de-blocs',
+        'composants.citation',
+        'composants.fin-de-section',
+        'composants.groupe-de-boutons',
+        'composants.iframe',
+        'composants.media',
+        'composants.mise-en-avant',
+        'composants.lien-hypertexte',
+        'composants.section',
+        'composants.telechargement',
+        'composants.titre',
+        'composants.carte-verticale',
+        'composants.flux-outils',
+        'composants.flux-dispositifs'
+      ]
+    >;
+    slug: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::axe.axe', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::axe.axe', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBanniereBanniere extends Schema.SingleType {
+  collectionName: 'bannieres';
+  info: {
+    singularName: 'banniere';
+    pluralName: 'bannieres';
+    displayName: 'Banni\u00E8re';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre: Attribute.String;
+    taille_du_titre: Attribute.Enumeration<['h1', 'h2', 'h3', 'h4', 'h5']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'h3'>;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    couleur_du_titre: Attribute.Enumeration<
+      ['Noir', 'Blanc', 'Bleu', 'Rouge']
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'Noir'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::banniere.banniere',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::banniere.banniere',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBreveBreve extends Schema.CollectionType {
+  collectionName: 'breves';
+  info: {
+    singularName: 'breve';
+    pluralName: 'breves';
+    displayName: 'Br\u00E8ves';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre_de_la_carte: Attribute.String;
+    label: Attribute.Enumeration<['Ev\u00E8nement', 'Actualit\u00E9']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'Ev\u00E8nement'>;
+    image: Attribute.Media<'images'>;
+    composants: Attribute.DynamicZone<
+      [
+        'composants.bloc-de-texte',
+        'composants.bouton',
+        'composants.champ-de-blocs',
+        'composants.fin-de-section',
+        'composants.section',
+        'composants.titre',
+        'composants.citation',
+        'composants.carte-horizontale',
+        'composants.carte-verticale',
+        'composants.media',
+        'composants.mise-en-avant',
+        'composants.lien-hypertexte',
+        'composants.telechargement',
+        'composants.carte-telechargement',
+        'composants.groupe-de-boutons',
+        'composants.accordeon',
+        'composants.iframe',
+        'composants.carte-deroulante',
+        'composants.bandeau-titre'
+      ]
+    >;
+    type: Attribute.Enumeration<['breve']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'breve'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::breve.breve',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::breve.breve',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre: Attribute.String;
+    texte: Attribute.Text;
+    texte_du_bouton: Attribute.String;
+    lien_du_bouton: Attribute.String & Attribute.Required;
+    lien_twitter: Attribute.String;
+    lien_linkedin: Attribute.String;
+    lien_youtube: Attribute.String;
+    lien_facebook: Attribute.String;
+    lien_instagram: Attribute.String;
+    titre_abonnement: Attribute.String;
+    texte_du_bouton_abonnement: Attribute.String;
+    lien_du_bouton_abonnement: Attribute.String;
+    afficher_section: Attribute.Boolean;
+    lien_mastodon: Attribute.String;
+    liens_footer: Attribute.Component<'composants.liens-footer', true>;
+    paragraphe_de_droite: Attribute.Text &
+      Attribute.DefaultTo<'Ceci est un paragraphe'>;
+    logo: Attribute.Media<'images'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHeaderHeader extends Schema.SingleType {
+  collectionName: 'headers';
+  info: {
+    singularName: 'header';
+    pluralName: 'headers';
+    displayName: 'Header';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    liens_header: Attribute.Component<'composants.lien-header', true>;
+    logo: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::header.header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::header.header',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNavigationNavigation extends Schema.CollectionType {
+  collectionName: 'navigations';
+  info: {
+    singularName: 'navigation';
+    pluralName: 'navigations';
+    displayName: 'Barre-de-Navigation';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    lien_navbar: Attribute.DynamicZone<
+      ['composants.lien', 'composants.deroulant-navbar']
+    > &
+      Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
+    titre: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.DefaultTo<'Mon Onglet'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::navigation.navigation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::navigation.navigation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOutilsEtDispositifOutilsEtDispositif
+  extends Schema.CollectionType {
+  collectionName: 'outils_et_dispositifs';
+  info: {
+    singularName: 'outils-et-dispositif';
+    pluralName: 'outils-et-dispositifs';
+    displayName: 'Outils-et-dispositifs';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre_de_la_carte: Attribute.String;
+    type_element: Attribute.Enumeration<['Outil', 'Dispositif']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'Outil'>;
+    Composants: Attribute.DynamicZone<
+      [
+        'composants.accordeon',
+        'composants.ancre',
+        'composants.bandeau-titre',
+        'composants.bloc-de-breves',
+        'composants.bloc-de-texte',
+        'composants.bloc-deroulant',
+        'composants.bouton',
+        'composants.carte-deroulante',
+        'composants.carte-horizontale',
+        'composants.carte-telechargement',
+        'composants.carte-verticale',
+        'composants.champ-de-blocs',
+        'composants.citation',
+        'composants.iframe',
+        'composants.groupe-de-boutons',
+        'composants.fin-de-section',
+        'composants.media',
+        'composants.section',
+        'composants.telechargement',
+        'composants.titre',
+        'composants.mise-en-avant',
+        'composants.lien-hypertexte'
+      ]
+    >;
+    image: Attribute.Media<'images'>;
+    texte_de_la_carte: Attribute.Text;
+    autres_liaisons: Attribute.Component<'composants.liaison', true>;
+    liaison_avec: Attribute.Enumeration<
+      ['axe-1', 'axe-2', 'axe-3', 'axe-4', 'engagement-transverse']
+    > &
+      Attribute.Required &
+      Attribute.DefaultTo<'axe-1'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::outils-et-dispositif.outils-et-dispositif',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::outils-et-dispositif.outils-et-dispositif',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPagePage extends Schema.CollectionType {
+  collectionName: 'pages';
+  info: {
+    singularName: 'page';
+    pluralName: 'pages';
+    displayName: 'Pages';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nom_de_page: Attribute.String & Attribute.Unique;
+    Composants: Attribute.DynamicZone<
+      [
+        'composants.bloc-de-texte',
+        'composants.titre',
+        'composants.bouton',
+        'composants.section',
+        'composants.fin-de-section',
+        'composants.flux-de-publications',
+        'composants.flux-actualite',
+        'composants.champ-de-blocs',
+        'composants.navigation',
+        'composants.ancre',
+        'composants.bloc-de-breves',
+        'composants.citation',
+        'composants.bloc-de-publications-strategiques',
+        'composants.bloc-de-rapports-de-recherches',
+        'composants.carte-horizontale',
+        'composants.carte-verticale',
+        'composants.media',
+        'composants.mise-en-avant',
+        'composants.lien-hypertexte',
+        'composants.telechargement',
+        'composants.carte-telechargement',
+        'composants.groupe-de-boutons',
+        'composants.accordeon',
+        'composants.iframe',
+        'composants.carte-deroulante',
+        'composants.bandeau-titre'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageAccueilPageAccueil extends Schema.SingleType {
+  collectionName: 'page_accueils';
+  info: {
+    singularName: 'page-accueil';
+    pluralName: 'page-accueils';
+    displayName: 'Page_accueil';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    page_accueil: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'accueil'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-accueil.page-accueil',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-accueil.page-accueil',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPublicationStrategiquePublicationStrategique
+  extends Schema.CollectionType {
+  collectionName: 'publications_strategiques';
+  info: {
+    singularName: 'publication-strategique';
+    pluralName: 'publications-strategiques';
+    displayName: 'Rapports-strategiques';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre_de_la_carte: Attribute.String;
+    composants: Attribute.DynamicZone<
+      [
+        'composants.bloc-de-texte',
+        'composants.bouton',
+        'composants.champ-de-blocs',
+        'composants.fin-de-section',
+        'composants.section',
+        'composants.titre',
+        'composants.badge',
+        'composants.citation',
+        'composants.carte-horizontale',
+        'composants.carte-verticale',
+        'composants.media',
+        'composants.mise-en-avant',
+        'composants.lien-hypertexte',
+        'composants.telechargement',
+        'composants.carte-telechargement',
+        'composants.groupe-de-boutons',
+        'composants.accordeon',
+        'composants.iframe',
+        'composants.carte-deroulante',
+        'composants.bandeau-titre'
+      ]
+    >;
+    type: Attribute.Enumeration<['rapport-strat\u00E9gique']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'rapport-strat\u00E9gique'>;
+    texte_de_la_carte: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::publication-strategique.publication-strategique',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::publication-strategique.publication-strategique',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRapportDeRechercheRapportDeRecherche
+  extends Schema.CollectionType {
+  collectionName: 'rapports_de_recherches';
+  info: {
+    singularName: 'rapport-de-recherche';
+    pluralName: 'rapports-de-recherches';
+    displayName: 'Etudes';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titre_de_la_carte: Attribute.String;
+    composants: Attribute.DynamicZone<
+      [
+        'composants.bloc-de-texte',
+        'composants.bouton',
+        'composants.champ-de-blocs',
+        'composants.fin-de-section',
+        'composants.section',
+        'composants.titre',
+        'composants.citation',
+        'composants.carte-horizontale',
+        'composants.carte-verticale',
+        'composants.media',
+        'composants.mise-en-avant',
+        'composants.lien-hypertexte',
+        'composants.telechargement',
+        'composants.carte-telechargement',
+        'composants.groupe-de-boutons',
+        'composants.accordeon',
+        'composants.iframe',
+        'composants.carte-deroulante',
+        'composants.bandeau-titre'
+      ]
+    >;
+    type: Attribute.Enumeration<['etude']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'etude'>;
+    texte_de_la_carte: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::rapport-de-recherche.rapport-de-recherche',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::rapport-de-recherche.rapport-de-recherche',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -802,10 +1382,22 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
-      'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'plugin::i18n.locale': PluginI18NLocale;
+      'api::alerte.alerte': ApiAlerteAlerte;
+      'api::axe.axe': ApiAxeAxe;
+      'api::banniere.banniere': ApiBanniereBanniere;
+      'api::breve.breve': ApiBreveBreve;
+      'api::footer.footer': ApiFooterFooter;
+      'api::header.header': ApiHeaderHeader;
+      'api::navigation.navigation': ApiNavigationNavigation;
+      'api::outils-et-dispositif.outils-et-dispositif': ApiOutilsEtDispositifOutilsEtDispositif;
+      'api::page.page': ApiPagePage;
+      'api::page-accueil.page-accueil': ApiPageAccueilPageAccueil;
+      'api::publication-strategique.publication-strategique': ApiPublicationStrategiquePublicationStrategique;
+      'api::rapport-de-recherche.rapport-de-recherche': ApiRapportDeRechercheRapportDeRecherche;
     }
   }
 }

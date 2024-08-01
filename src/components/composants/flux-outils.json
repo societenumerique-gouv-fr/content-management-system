@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_composants_flux_outils",
+  "info": {
+    "displayName": "Flux-outils",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "type_element": {
+      "type": "enumeration",
+      "enum": [
+        "flux-outils"
+      ],
+      "default": "flux-outils",
+      "required": true
+    }
+  }
+}

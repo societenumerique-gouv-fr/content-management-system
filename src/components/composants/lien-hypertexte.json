@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_composants_lien_hypertextes",
+  "info": {
+    "displayName": "Lien-hypertexte",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "texte": {
+      "type": "string",
+      "required": true
+    },
+    "page_cible": {
+      "type": "string",
+      "required": true,
+      "regex": "^\\S+$",
+      "default": "https://"
+    },
+    "taille": {
+      "type": "enumeration",
+      "enum": [
+        "Petit",
+        "Moyen",
+        "Grand"
+      ],
+      "default": "Moyen",
+      "required": true
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "Gauche",
+        "Centre",
+        "Droite"
+      ],
+      "default": "Gauche",
+      "required": true
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}

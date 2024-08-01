@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_composants_bloc_simples",
+  "info": {
+    "displayName": "Bloc-simple",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "texte": {
+      "type": "text",
+      "maxLength": 120
+    },
+    "texte_en_valeur": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "page_cible": {
+      "type": "string",
+      "regex": "^\\S+$"
+    }
+  }
+}

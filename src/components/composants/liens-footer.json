@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_composants_liens_footers",
+  "info": {
+    "displayName": "Liens-footer",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type_de_composant": {
+      "type": "enumeration",
+      "enum": [
+        "liens-footer"
+      ],
+      "default": "liens-footer",
+      "required": true
+    },
+    "liens_footer": {
+      "type": "component",
+      "repeatable": true,
+      "component": "composants.lien-footer"
+    }
+  }
+}

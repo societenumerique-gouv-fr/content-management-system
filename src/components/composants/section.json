@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_composants_sections",
+  "info": {
+    "displayName": "Section",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "elements_par_ligne": {
+      "type": "enumeration",
+      "enum": [
+        "Deux",
+        "Trois"
+      ],
+      "default": "Deux",
+      "required": true
+    },
+    "espacement_bas": {
+      "type": "enumeration",
+      "enum": [
+        "défaut",
+        "px8",
+        "px16",
+        "px32",
+        "px48",
+        "px64"
+      ],
+      "default": "défaut",
+      "required": true
+    }
+  }
+}
