@@ -1,0 +1,44 @@
+---
+name: Deploy Scaleway serverless container
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  push_to_registry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        id: prepare
+        uses: actions/checkout@v4
+
+      - name: Login to Scaleway Website container registry
+        id: login
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.SCW_CONTAINER_REGISTRY }}
+          username: _json_key
+          password: ${{ secrets.SCW_SECRET_KEY }}
+
+      - name: Build and push Website Docker image
+        id: push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: ${{ secrets.SCW_CONTAINER_REGISTRY }}/website:latest
+          build-args: NEXT_PUBLIC_STRAPI_URL=${{ secrets.NEXT_PUBLIC_STRAPI_URL }}
+
+  run-container:
+    runs-on: ubuntu-latest
+    needs: push_to_registry
+    steps:
+      - name: Deploy serverless container with Scaleway API
+        id: deploy-serverless-container
+        run: |
+          curl -X POST \
+            -H "X-Auth-Token: ${{ secrets.SCW_SECRET_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{}' \
+            "https://api.scaleway.com/containers/v1beta1/regions/fr-par/containers/499eaa79-204c-4c18-bd89-615ba21bb2b8/deploy"
