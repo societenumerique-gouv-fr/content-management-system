@@ -1,0 +1,2006 @@
+{
+   "GET /api/pages": {
+      "content-type": "api::page.page",
+      "fields": [
+         "nom_de_page",
+         "createdAt",
+         "updatedAt",
+         "id",
+         "publishedAt"
+      ],
+      "populate": {
+         "Composants": {
+            "on": {
+               "composants.bloc-de-texte": {
+                  "fields": [
+                     "position",
+                     "texte",
+                     "tabulation",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.titre": {
+                  "fields": [
+                     "titre",
+                     "taille",
+                     "position",
+                     "page_cible",
+                     "titre_du_lien",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.bouton": {
+                  "fields": [
+                     "texte",
+                     "page_cible",
+                     "couleur",
+                     "position",
+                     "taille",
+                     "afficher_icone",
+                     "position_icone",
+                     "sans_contour",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.bloc-de-breves": {
+                  "fields": [
+                     "cartes_max_par_page"
+                  ]
+               },
+               "composants.ancre": {
+                  "fields": [
+                     "titre",
+                     "ancre"
+                  ]
+               },
+               "composants.navigation": {
+                  "populate": {
+                     "ancre": {
+                        "fields": [
+                           "titre",
+                           "ancre"
+                        ]
+                     }
+                  }
+               },
+               "composants.champ-de-blocs": {
+                  "fields": [
+                     "espacement_bas",
+                     "titre"
+                  ],
+                  "populate": {
+                     "Bloc_simple": {
+                        "fields": [
+                           "page_cible",
+                           "texte_en_valeur",
+                           "texte"
+                        ]
+                     }
+                  }
+               },
+               "composants.flux-actualite": {
+                  "fields": [
+                     "espacement_bas",
+                     "titre"
+                  ]
+               },
+               "composants.flux-de-publications": {
+                  "fields": [
+                     "espacement_bas",
+                     "titre"
+                  ]
+               },
+               "composants.fin-de-section": {
+                  "fields": [
+                     "titre"
+                  ]
+               },
+               "composants.section": {
+                  "fields": [
+                     "elements_par_ligne",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.citation": {
+                  "fields": [
+                     "citation",
+                     "auteur",
+                     "contexte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               },
+               "composants.bloc-de-publications-strategiques": {
+                  "fields": [
+                     "cartes_max_par_page"
+                  ]
+               },
+               "composants.bloc-de-rapports-de-recherches": {
+                  "fields": [
+                     "cartes_max_par_page"
+                  ]
+               },
+               "composants.carte-horizontale": {
+                  "fields": [
+                     "titre",
+                     "lien",
+                     "titre_du_lien",
+                     "texte_en_valeur",
+                     "texte",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-verticale": {
+                  "fields": [
+                     "titre",
+                     "lien",
+                     "titre_du_lien",
+                     "position",
+                     "taille",
+                     "texte_en_valeur",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.media": {
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "taille",
+                     "espacement_bas",
+                     "afficher_transcription",
+                     "lien_video",
+                     "position",
+                     "transcription_ouverte",
+                     "transcription",
+                     "titre_du_label",
+                     "lien_du_label",
+                     "description"
+                  ]
+               },
+               "composants.mise-en-avant": {
+                  "fields": [
+                     "titre",
+                     "texte",
+                     "afficher_pictogramme",
+                     "titre_du_bouton",
+                     "lien_du_bouton",
+                     "espacement_bas",
+                     "pictogramme_remixicon"
+                  ]
+               },
+               "composants.lien-hypertexte": {
+                  "fields": [
+                     "texte",
+                     "page_cible",
+                     "taille",
+                     "position",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.telechargement": {
+                  "fields": [
+                     "titre_de_la_liste",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "Lien_telechargement": {
+                        "fields": [
+                           "texte_du_lien",
+                           "actif"
+                        ],
+                        "populate": {
+                           "media_a_telecharger": {
+                              "fields": [
+                                 "url"
+                              ]
+                           }
+                        }
+                     }
+                  }
+               },
+               "composants.carte-telechargement": {
+                  "fields": [
+                     "type_de_carte",
+                     "titre_de_la_carte",
+                     "description_de_la_carte",
+                     "position",
+                     "taille",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image_de_la_carte": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "media_a_telecharger": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "label": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.groupe-de-boutons": {
+                  "populate": {
+                     "groupe_de_boutons": {
+                        "fields": [
+                           "texte",
+                           "page_cible",
+                           "couleur",
+                           "position",
+                           "taille",
+                           "afficher_icone",
+                           "position_icone",
+                           "sans_contour",
+                           "espacement_bas"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "position",
+                     "espacement_bas",
+                     "espacement_entre_les_boutons"
+                  ]
+               },
+               "composants.accordeon": {
+                  "fields": [
+                     "titre",
+                     "contenu",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.iframe": {
+                  "fields": [
+                     "taille_horizontale",
+                     "position",
+                     "source",
+                     "bords",
+                     "taille_verticale",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.carte-deroulante": {
+                  "fields": [
+                     "texte_du_bouton",
+                     "lien_du_bouton",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "bloc_deroulant": {
+                        "fields": [
+                           "texte_du_label",
+                           "texte"
+                        ]
+                     }
+                  }
+               },
+               "composants.bandeau-titre": {
+                  "fields": [
+                     "titre",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "GET /api/navigations": {
+      "content-type": "api::navigation.navigation",
+      "fields": [
+         "publishedAt",
+         "id",
+         "updatedAt",
+         "createdAt",
+         "titre"
+      ],
+      "populate": {
+         "lien_navbar": {
+            "on": {
+               "composants.deroulant-navbar": {
+                  "fields": [
+                     "titre_du_menu"
+                  ],
+                  "populate": {
+                     "liens": {
+                        "fields": [
+                           "titre_du_lien",
+                           "page_cible"
+                        ]
+                     }
+                  }
+               },
+               "composants.lien": {
+                  "fields": [
+                     "titre_du_lien",
+                     "page_cible"
+                  ]
+               }
+            }
+         }
+      }
+   },
+   "GET /api/breves": {
+      "content-type": "api::breve.breve",
+      "fields": [
+         "titre_de_la_carte",
+         "label",
+         "type",
+         "createdAt",
+         "updatedAt",
+         "id",
+         "publishedAt"
+      ],
+      "populate": {
+         "image": {
+            "fields": [
+               "url"
+            ]
+         },
+         "composants": {
+            "on": {
+               "composants.bloc-de-texte": {
+                  "fields": [
+                     "position",
+                     "texte",
+                     "tabulation",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.bouton": {
+                  "fields": [
+                     "texte",
+                     "page_cible",
+                     "couleur",
+                     "position",
+                     "taille",
+                     "afficher_icone",
+                     "position_icone",
+                     "sans_contour",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.champ-de-blocs": {
+                  "fields": [
+                     "titre",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "Bloc_simple": {
+                        "fields": [
+                           "texte",
+                           "texte_en_valeur",
+                           "page_cible"
+                        ]
+                     }
+                  }
+               },
+               "composants.fin-de-section": {
+                  "fields": [
+                     "titre"
+                  ]
+               },
+               "composants.section": {
+                  "fields": [
+                     "elements_par_ligne",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.titre": {
+                  "fields": [
+                     "titre",
+                     "taille",
+                     "position",
+                     "page_cible",
+                     "titre_du_lien",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.citation": {
+                  "fields": [
+                     "citation",
+                     "auteur",
+                     "contexte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-horizontale": {
+                  "fields": [
+                     "titre_du_lien",
+                     "lien",
+                     "titre",
+                     "texte_en_valeur",
+                     "texte",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-verticale": {
+                  "fields": [
+                     "titre",
+                     "lien",
+                     "titre_du_lien",
+                     "position",
+                     "taille",
+                     "texte_en_valeur",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.media": {
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "taille",
+                     "description",
+                     "lien_du_label",
+                     "titre_du_label",
+                     "transcription",
+                     "transcription_ouverte",
+                     "position",
+                     "lien_video",
+                     "afficher_transcription",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.mise-en-avant": {
+                  "fields": [
+                     "titre",
+                     "texte",
+                     "afficher_pictogramme",
+                     "titre_du_bouton",
+                     "lien_du_bouton",
+                     "espacement_bas",
+                     "pictogramme_remixicon"
+                  ]
+               },
+               "composants.lien-hypertexte": {
+                  "fields": [
+                     "texte",
+                     "page_cible",
+                     "taille",
+                     "position",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.telechargement": {
+                  "fields": [
+                     "titre_de_la_liste",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "Lien_telechargement": {
+                        "fields": [
+                           "texte_du_lien",
+                           "actif"
+                        ],
+                        "populate": {
+                           "media_a_telecharger": {
+                              "fields": [
+                                 "url"
+                              ]
+                           }
+                        }
+                     }
+                  }
+               },
+               "composants.carte-telechargement": {
+                  "fields": [
+                     "type_de_carte",
+                     "titre_de_la_carte",
+                     "description_de_la_carte",
+                     "position",
+                     "taille",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image_de_la_carte": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "media_a_telecharger": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "label": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.groupe-de-boutons": {
+                  "populate": {
+                     "groupe_de_boutons": {
+                        "fields": [
+                           "page_cible",
+                           "texte",
+                           "couleur",
+                           "position",
+                           "taille",
+                           "afficher_icone",
+                           "position_icone",
+                           "sans_contour",
+                           "espacement_bas"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "position",
+                     "espacement_entre_les_boutons",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.accordeon": {
+                  "fields": [
+                     "espacement_bas",
+                     "contenu",
+                     "titre"
+                  ]
+               },
+               "composants.iframe": {
+                  "fields": [
+                     "taille_horizontale",
+                     "position",
+                     "source",
+                     "bords",
+                     "taille_verticale",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.carte-deroulante": {
+                  "fields": [
+                     "texte_du_bouton",
+                     "lien_du_bouton",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "bloc_deroulant": {
+                        "fields": [
+                           "texte_du_label",
+                           "texte"
+                        ]
+                     }
+                  }
+               },
+               "composants.bandeau-titre": {
+                  "fields": [
+                     "texte",
+                     "titre",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "GET /api/publications-strategiques": {
+      "content-type": "api::publication-strategique.publication-strategique",
+      "fields": [
+         "titre_de_la_carte",
+         "type",
+         "texte_de_la_carte",
+         "publishedAt",
+         "id",
+         "updatedAt",
+         "createdAt"
+      ],
+      "populate": {
+         "composants": {
+            "on": {
+               "composants.bloc-de-texte": {
+                  "fields": [
+                     "position",
+                     "texte",
+                     "tabulation",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.bouton": {
+                  "fields": [
+                     "texte",
+                     "page_cible",
+                     "couleur",
+                     "position",
+                     "taille",
+                     "afficher_icone",
+                     "position_icone",
+                     "sans_contour",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.champ-de-blocs": {
+                  "fields": [
+                     "espacement_bas",
+                     "titre"
+                  ],
+                  "populate": {
+                     "Bloc_simple": {
+                        "fields": [
+                           "texte",
+                           "texte_en_valeur",
+                           "page_cible"
+                        ]
+                     }
+                  }
+               },
+               "composants.fin-de-section": {
+                  "fields": [
+                     "titre"
+                  ]
+               },
+               "composants.section": {
+                  "fields": [
+                     "elements_par_ligne",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.titre": {
+                  "fields": [
+                     "titre",
+                     "taille",
+                     "position",
+                     "page_cible",
+                     "titre_du_lien",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.badge": {
+                  "fields": [
+                     "texte",
+                     "couleur",
+                     "position"
+                  ]
+               },
+               "composants.citation": {
+                  "fields": [
+                     "citation",
+                     "auteur",
+                     "contexte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-horizontale": {
+                  "fields": [
+                     "titre",
+                     "lien",
+                     "titre_du_lien",
+                     "texte_en_valeur",
+                     "texte",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-verticale": {
+                  "fields": [
+                     "titre",
+                     "lien",
+                     "titre_du_lien",
+                     "position",
+                     "taille",
+                     "texte_en_valeur",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.media": {
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "taille",
+                     "description",
+                     "lien_du_label",
+                     "titre_du_label",
+                     "transcription",
+                     "transcription_ouverte",
+                     "position",
+                     "lien_video",
+                     "espacement_bas",
+                     "afficher_transcription"
+                  ]
+               },
+               "composants.mise-en-avant": {
+                  "fields": [
+                     "titre",
+                     "texte",
+                     "afficher_pictogramme",
+                     "titre_du_bouton",
+                     "lien_du_bouton",
+                     "espacement_bas",
+                     "pictogramme_remixicon"
+                  ]
+               },
+               "composants.lien-hypertexte": {
+                  "fields": [
+                     "texte",
+                     "page_cible",
+                     "taille",
+                     "position",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.telechargement": {
+                  "fields": [
+                     "titre_de_la_liste",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "Lien_telechargement": {
+                        "populate": {
+                           "media_a_telecharger": {
+                              "fields": [
+                                 "url"
+                              ]
+                           }
+                        },
+                        "fields": [
+                           "actif"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-telechargement": {
+                  "populate": {
+                     "image_de_la_carte": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "media_a_telecharger": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "label": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "titre_de_la_carte",
+                     "description_de_la_carte",
+                     "position",
+                     "taille",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.groupe-de-boutons": {
+                  "populate": {
+                     "groupe_de_boutons": {
+                        "fields": [
+                           "texte",
+                           "page_cible",
+                           "couleur",
+                           "position",
+                           "taille",
+                           "afficher_icone",
+                           "position_icone",
+                           "sans_contour",
+                           "espacement_bas"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "position",
+                     "espacement_entre_les_boutons",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.accordeon": {
+                  "fields": [
+                     "titre",
+                     "contenu",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.iframe": {
+                  "fields": [
+                     "taille_horizontale",
+                     "position",
+                     "source",
+                     "bords",
+                     "taille_verticale",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.carte-deroulante": {
+                  "fields": [
+                     "texte_du_bouton",
+                     "lien_du_bouton",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "bloc_deroulant": {
+                        "fields": [
+                           "texte_du_label",
+                           "texte"
+                        ]
+                     }
+                  }
+               },
+               "composants.bandeau-titre": {
+                  "fields": [
+                     "titre",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "GET /api/rapports-de-recherches": {
+      "content-type": "api::rapport-de-recherche.rapport-de-recherche",
+      "fields": [
+         "titre_de_la_carte",
+         "publishedAt",
+         "id",
+         "updatedAt",
+         "createdAt",
+         "texte_de_la_carte",
+         "type"
+      ],
+      "populate": {
+         "composants": {
+            "on": {
+               "composants.bloc-de-texte": {
+                  "fields": [
+                     "position",
+                     "texte",
+                     "tabulation",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.bouton": {
+                  "fields": [
+                     "texte",
+                     "page_cible",
+                     "couleur",
+                     "position",
+                     "taille",
+                     "afficher_icone",
+                     "position_icone",
+                     "sans_contour",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.champ-de-blocs": {
+                  "fields": [
+                     "titre",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "Bloc_simple": {
+                        "fields": [
+                           "texte",
+                           "texte_en_valeur",
+                           "page_cible"
+                        ]
+                     }
+                  }
+               },
+               "composants.fin-de-section": {
+                  "fields": [
+                     "titre"
+                  ]
+               },
+               "composants.section": {
+                  "fields": [
+                     "elements_par_ligne",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.titre": {
+                  "fields": [
+                     "titre",
+                     "taille",
+                     "position",
+                     "page_cible",
+                     "titre_du_lien",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.citation": {
+                  "fields": [
+                     "citation",
+                     "auteur",
+                     "contexte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-horizontale": {
+                  "fields": [
+                     "titre",
+                     "lien",
+                     "titre_du_lien",
+                     "texte_en_valeur",
+                     "texte",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-verticale": {
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "position",
+                     "taille",
+                     "texte_en_valeur",
+                     "texte",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.media": {
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "taille",
+                     "description",
+                     "lien_du_label",
+                     "titre_du_label",
+                     "transcription",
+                     "transcription_ouverte",
+                     "position",
+                     "lien_video",
+                     "afficher_transcription",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.mise-en-avant": {
+                  "fields": [
+                     "titre",
+                     "texte",
+                     "afficher_pictogramme",
+                     "titre_du_bouton",
+                     "lien_du_bouton",
+                     "espacement_bas",
+                     "pictogramme_remixicon"
+                  ]
+               },
+               "composants.lien-hypertexte": {
+                  "fields": [
+                     "texte",
+                     "page_cible",
+                     "taille",
+                     "position",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.telechargement": {
+                  "fields": [
+                     "titre_de_la_liste",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "Lien_telechargement": {
+                        "fields": [
+                           "texte_du_lien",
+                           "actif"
+                        ],
+                        "populate": {
+                           "media_a_telecharger": {
+                              "fields": [
+                                 "url"
+                              ]
+                           }
+                        }
+                     }
+                  }
+               },
+               "composants.carte-telechargement": {
+                  "fields": [
+                     "type_de_carte",
+                     "titre_de_la_carte",
+                     "description_de_la_carte",
+                     "position",
+                     "taille",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image_de_la_carte": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "media_a_telecharger": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "label": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.groupe-de-boutons": {
+                  "populate": {
+                     "groupe_de_boutons": {
+                        "fields": [
+                           "texte",
+                           "page_cible",
+                           "couleur",
+                           "position",
+                           "taille",
+                           "afficher_icone",
+                           "position_icone",
+                           "sans_contour",
+                           "espacement_bas"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "position",
+                     "espacement_entre_les_boutons",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.accordeon": {
+                  "fields": [
+                     "titre",
+                     "contenu",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.iframe": {
+                  "fields": [
+                     "taille_horizontale",
+                     "position",
+                     "source",
+                     "bords",
+                     "taille_verticale",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.carte-deroulante": {
+                  "fields": [
+                     "texte_du_bouton",
+                     "lien_du_bouton",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "bloc_deroulant": {
+                        "fields": [
+                           "texte_du_label",
+                           "texte"
+                        ]
+                     }
+                  }
+               },
+               "composants.bandeau-titre": {
+                  "fields": [
+                     "titre",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               }
+            }
+         }
+      }
+   },
+   "GET /api/banniere": {
+      "content-type": "api::banniere.banniere",
+      "fields": [
+         "titre",
+         "taille_du_titre",
+         "couleur_du_titre",
+         "createdAt",
+         "updatedAt",
+         "id",
+         "publishedAt"
+      ],
+      "populate": {
+         "image": {
+            "fields": [
+               "url"
+            ]
+         }
+      }
+   },
+   "GET /api/footer": {
+      "content-type": "api::footer.footer",
+      "fields": [
+         "titre",
+         "texte",
+         "lien_twitter",
+         "texte_du_bouton",
+         "lien_du_bouton",
+         "lien_linkedin",
+         "lien_youtube",
+         "lien_facebook",
+         "lien_instagram",
+         "titre_abonnement",
+         "texte_du_bouton_abonnement",
+         "lien_du_bouton_abonnement",
+         "afficher_section",
+         "lien_mastodon",
+         "paragraphe_de_droite",
+         "id"
+      ],
+      "populate": {
+         "liens_footer": {
+            "fields": [
+               "type_de_composant"
+            ],
+            "populate": {
+               "liens_footer": {
+                  "fields": [
+                     "titre_du_lien",
+                     "url"
+                  ]
+               }
+            }
+         },
+         "logo": {
+            "fields": [
+               "url"
+            ]
+         }
+      }
+   },
+   "GET /api/header": {
+      "content-type": "api::header.header",
+      "populate": {
+         "liens_header": {
+            "fields": [
+               "titre_du_lien",
+               "page_cible",
+               "pictogramme_remixicon"
+            ]
+         },
+         "logo": {
+            "fields": [
+               "url"
+            ]
+         }
+      }
+   },
+   "GET /api/axes": {
+      "content-type": "api::axe.axe",
+      "fields": [
+         "titre",
+         "publishedAt",
+         "id",
+         "updatedAt",
+         "createdAt",
+         "slug"
+      ],
+      "populate": {
+         "Composants": {
+            "on": {
+               "composants.accordeon": {
+                  "fields": [
+                     "titre",
+                     "contenu",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.ancre": {
+                  "fields": [
+                     "ancre",
+                     "titre"
+                  ]
+               },
+               "composants.bandeau-titre": {
+                  "fields": [
+                     "titre",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               },
+               "composants.bloc-de-texte": {
+                  "fields": [
+                     "position",
+                     "texte",
+                     "tabulation",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.bloc-deroulant": {
+                  "fields": [
+                     "texte_du_label",
+                     "texte"
+                  ]
+               },
+               "composants.bouton": {
+                  "fields": [
+                     "texte",
+                     "page_cible",
+                     "couleur",
+                     "position",
+                     "taille",
+                     "afficher_icone",
+                     "position_icone",
+                     "sans_contour",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.carte-deroulante": {
+                  "fields": [
+                     "texte_du_bouton",
+                     "texte",
+                     "lien_du_bouton",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "bloc_deroulant": {
+                        "fields": [
+                           "texte_du_label",
+                           "texte"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-horizontale": {
+                  "fields": [
+                     "titre",
+                     "lien",
+                     "titre_du_lien",
+                     "texte_en_valeur",
+                     "texte",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-telechargement": {
+                  "fields": [
+                     "type_de_carte",
+                     "titre_de_la_carte",
+                     "description_de_la_carte",
+                     "position",
+                     "taille",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image_de_la_carte": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "media_a_telecharger": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "label": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.champ-de-blocs": {
+                  "fields": [
+                     "titre",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "Bloc_simple": {
+                        "fields": [
+                           "texte",
+                           "texte_en_valeur",
+                           "page_cible"
+                        ]
+                     }
+                  }
+               },
+               "composants.citation": {
+                  "fields": [
+                     "citation",
+                     "auteur",
+                     "contexte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               },
+               "composants.fin-de-section": {
+                  "fields": [
+                     "titre"
+                  ]
+               },
+               "composants.groupe-de-boutons": {
+                  "populate": {
+                     "groupe_de_boutons": {
+                        "fields": [
+                           "texte",
+                           "page_cible",
+                           "couleur",
+                           "position",
+                           "taille",
+                           "afficher_icone",
+                           "position_icone",
+                           "sans_contour",
+                           "espacement_bas"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "position",
+                     "espacement_entre_les_boutons",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.iframe": {
+                  "fields": [
+                     "taille_horizontale",
+                     "position",
+                     "source",
+                     "bords",
+                     "taille_verticale",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.media": {
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "taille",
+                     "description",
+                     "lien_du_label",
+                     "titre_du_label",
+                     "transcription",
+                     "transcription_ouverte",
+                     "position",
+                     "lien_video",
+                     "afficher_transcription",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.mise-en-avant": {
+                  "fields": [
+                     "titre",
+                     "texte",
+                     "afficher_pictogramme",
+                     "titre_du_bouton",
+                     "lien_du_bouton",
+                     "espacement_bas",
+                     "pictogramme_remixicon"
+                  ]
+               },
+               "composants.lien-hypertexte": {
+                  "fields": [
+                     "texte",
+                     "page_cible",
+                     "taille",
+                     "position",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.section": {
+                  "fields": [
+                     "elements_par_ligne",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.telechargement": {
+                  "fields": [
+                     "titre_de_la_liste",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "Lien_telechargement": {
+                        "fields": [
+                           "texte_du_lien",
+                           "actif"
+                        ],
+                        "populate": {
+                           "media_a_telecharger": {
+                              "fields": [
+                                 "url"
+                              ]
+                           }
+                        }
+                     }
+                  }
+               },
+               "composants.titre": {
+                  "fields": [
+                     "titre",
+                     "taille",
+                     "position",
+                     "page_cible",
+                     "titre_du_lien",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.carte-verticale": {
+                  "fields": [
+                     "titre",
+                     "lien",
+                     "titre_du_lien",
+                     "position",
+                     "taille",
+                     "texte_en_valeur",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.flux-outils": {
+                  "fields": [
+                     "type_element"
+                  ]
+               },
+               "composants.flux-dispositifs": {
+                  "fields": [
+                     "type_element"
+                  ]
+               }
+            }
+         }
+      }
+   },
+   "GET /api/outils-et-dispositifs": {
+      "content-type": "api::outils-et-dispositif.outils-et-dispositif",
+      "fields": [
+         "titre_de_la_carte",
+         "type_element",
+         "publishedAt",
+         "id",
+         "createdAt",
+         "liaison_avec",
+         "updatedAt",
+         "texte_de_la_carte"
+      ],
+      "populate": {
+         "Composants": {
+            "on": {
+               "composants.accordeon": {
+                  "fields": [
+                     "titre",
+                     "contenu",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.ancre": {
+                  "fields": [
+                     "ancre",
+                     "titre"
+                  ]
+               },
+               "composants.bandeau-titre": {
+                  "fields": [
+                     "titre",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               },
+               "composants.bloc-de-breves": {
+                  "fields": [
+                     "cartes_max_par_page"
+                  ]
+               },
+               "composants.bloc-de-texte": {
+                  "fields": [
+                     "position",
+                     "texte",
+                     "espacement_bas",
+                     "tabulation"
+                  ]
+               },
+               "composants.bloc-deroulant": {
+                  "fields": [
+                     "texte_du_label",
+                     "texte"
+                  ]
+               },
+               "composants.bouton": {
+                  "fields": [
+                     "texte",
+                     "page_cible",
+                     "couleur",
+                     "position",
+                     "taille",
+                     "afficher_icone",
+                     "position_icone",
+                     "sans_contour",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.carte-deroulante": {
+                  "fields": [
+                     "texte_du_bouton",
+                     "lien_du_bouton",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "bloc_deroulant": {
+                        "fields": [
+                           "texte_du_label",
+                           "texte"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-horizontale": {
+                  "fields": [
+                     "titre",
+                     "lien",
+                     "titre_du_lien",
+                     "texte_en_valeur",
+                     "texte",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-telechargement": {
+                  "fields": [
+                     "type_de_carte",
+                     "titre_de_la_carte",
+                     "description_de_la_carte",
+                     "position",
+                     "taille",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image_de_la_carte": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "media_a_telecharger": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "label": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.carte-verticale": {
+                  "fields": [
+                     "titre",
+                     "lien",
+                     "titre_du_lien",
+                     "position",
+                     "taille",
+                     "texte_en_valeur",
+                     "texte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     },
+                     "labels": {
+                        "fields": [
+                           "titre_du_label",
+                           "couleur_du_label"
+                        ]
+                     }
+                  }
+               },
+               "composants.champ-de-blocs": {
+                  "fields": [
+                     "titre",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "Bloc_simple": {
+                        "fields": [
+                           "texte",
+                           "texte_en_valeur",
+                           "page_cible"
+                        ]
+                     }
+                  }
+               },
+               "composants.citation": {
+                  "fields": [
+                     "citation",
+                     "auteur",
+                     "contexte",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  }
+               },
+               "composants.iframe": {
+                  "fields": [
+                     "taille_horizontale",
+                     "position",
+                     "source",
+                     "bords",
+                     "taille_verticale",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.groupe-de-boutons": {
+                  "populate": {
+                     "groupe_de_boutons": {
+                        "fields": [
+                           "texte",
+                           "page_cible",
+                           "couleur",
+                           "position",
+                           "taille",
+                           "afficher_icone",
+                           "position_icone",
+                           "espacement_bas",
+                           "sans_contour"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "position",
+                     "espacement_entre_les_boutons",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.fin-de-section": {
+                  "fields": [
+                     "titre"
+                  ]
+               },
+               "composants.media": {
+                  "populate": {
+                     "image": {
+                        "fields": [
+                           "url"
+                        ]
+                     }
+                  },
+                  "fields": [
+                     "taille",
+                     "description",
+                     "lien_du_label",
+                     "titre_du_label",
+                     "transcription",
+                     "transcription_ouverte",
+                     "position",
+                     "lien_video",
+                     "afficher_transcription",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.lien-hypertexte": {
+                  "fields": [
+                     "espacement_bas",
+                     "position",
+                     "taille",
+                     "page_cible",
+                     "texte"
+                  ]
+               },
+               "composants.mise-en-avant": {
+                  "fields": [
+                     "pictogramme_remixicon",
+                     "espacement_bas",
+                     "lien_du_bouton",
+                     "titre_du_bouton",
+                     "afficher_pictogramme",
+                     "texte",
+                     "titre"
+                  ]
+               },
+               "composants.titre": {
+                  "fields": [
+                     "espacement_bas",
+                     "titre_du_lien",
+                     "page_cible",
+                     "position",
+                     "taille",
+                     "titre"
+                  ]
+               },
+               "composants.section": {
+                  "fields": [
+                     "elements_par_ligne",
+                     "espacement_bas"
+                  ]
+               },
+               "composants.telechargement": {
+                  "fields": [
+                     "titre_de_la_liste",
+                     "position",
+                     "espacement_bas"
+                  ],
+                  "populate": {
+                     "Lien_telechargement": {
+                        "fields": [
+                           "texte_du_lien",
+                           "actif"
+                        ],
+                        "populate": {
+                           "media_a_telecharger": {
+                              "fields": [
+                                 "url"
+                              ]
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         },
+         "autres_liaisons": {
+            "fields": [
+               "titre",
+               "liaison"
+            ]
+         },
+         "image": {
+            "fields": [
+               "url"
+            ]
+         }
+      }
+   }
+}
