@@ -28,6 +28,7 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.SCW_CONTAINER_REGISTRY }}/content-management-system:latest
+          build-args: NODE_ENV=production
 
   run-container:
     runs-on: ubuntu-latest
