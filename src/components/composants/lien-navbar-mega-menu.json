@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_composants_lien_navbar_mega_menus",
+  "info": {
+    "displayName": "Lien-Navbar-Mega-Menu",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "titre_de_la_categorie": {
+      "type": "string",
+      "required": true
+    },
+    "titre_du_lien": {
+      "type": "string",
+      "required": true
+    },
+    "page_cible": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

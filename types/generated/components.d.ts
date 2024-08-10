@@ -102,6 +102,25 @@ export interface ComposantsMiseEnAvant extends Schema.Component {
   };
 }
 
+export interface ComposantsMegaMenuNavbar extends Schema.Component {
+  collectionName: 'components_composants_mega_menu_navbars';
+  info: {
+    displayName: 'Mega-Menu-Navbar';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    titre_du_menu: Attribute.String & Attribute.Required;
+    titre_editorialise: Attribute.String;
+    texte_de_presentation: Attribute.String;
+    categories: Attribute.Component<
+      'composants.categorie-navbar-mega-menu',
+      true
+    >;
+    liens: Attribute.Component<'composants.lien-navbar-mega-menu', true>;
+  };
+}
+
 export interface ComposantsMedia extends Schema.Component {
   collectionName: 'components_composants_media';
   info: {
@@ -179,6 +198,19 @@ export interface ComposantsLienTelechargement extends Schema.Component {
     actif: Attribute.Enumeration<['Oui', 'Non']> &
       Attribute.Required &
       Attribute.DefaultTo<'Oui'>;
+  };
+}
+
+export interface ComposantsLienNavbarMegaMenu extends Schema.Component {
+  collectionName: 'components_composants_lien_navbar_mega_menus';
+  info: {
+    displayName: 'Lien-Navbar-Mega-Menu';
+    icon: 'grid';
+  };
+  attributes: {
+    titre_de_la_categorie: Attribute.String & Attribute.Required;
+    titre_du_lien: Attribute.String & Attribute.Required;
+    page_cible: Attribute.String & Attribute.Required;
   };
 }
 
@@ -412,7 +444,7 @@ export interface ComposantsDeroulantNavbar extends Schema.Component {
   collectionName: 'components_composants_deroulant_navbars';
   info: {
     displayName: 'Deroulant-Navbar';
-    icon: 'grid';
+    icon: 'bulletList';
     description: '';
   };
   attributes: {
@@ -458,6 +490,19 @@ export interface ComposantsChampDeBlocs extends Schema.Component {
     > &
       Attribute.Required &
       Attribute.DefaultTo<'d\u00E9faut'>;
+  };
+}
+
+export interface ComposantsCategorieNavbarMegaMenu extends Schema.Component {
+  collectionName: 'components_composants_categorie_navbar_mega_menus';
+  info: {
+    displayName: 'Categorie-Navbar-Mega-Menu';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    titre_de_la_categorie: Attribute.String & Attribute.Required;
+    page_cible: Attribute.String;
   };
 }
 
@@ -786,10 +831,12 @@ declare module '@strapi/types' {
       'composants.section': ComposantsSection;
       'composants.navigation': ComposantsNavigation;
       'composants.mise-en-avant': ComposantsMiseEnAvant;
+      'composants.mega-menu-navbar': ComposantsMegaMenuNavbar;
       'composants.media': ComposantsMedia;
       'composants.liens-footer': ComposantsLiensFooter;
       'composants.lien': ComposantsLien;
       'composants.lien-telechargement': ComposantsLienTelechargement;
+      'composants.lien-navbar-mega-menu': ComposantsLienNavbarMegaMenu;
       'composants.lien-hypertexte': ComposantsLienHypertexte;
       'composants.lien-header': ComposantsLienHeader;
       'composants.lien-footer': ComposantsLienFooter;
@@ -805,6 +852,7 @@ declare module '@strapi/types' {
       'composants.deroulant-navbar': ComposantsDeroulantNavbar;
       'composants.citation': ComposantsCitation;
       'composants.champ-de-blocs': ComposantsChampDeBlocs;
+      'composants.categorie-navbar-mega-menu': ComposantsCategorieNavbarMegaMenu;
       'composants.carte-verticale': ComposantsCarteVerticale;
       'composants.carte-telechargement': ComposantsCarteTelechargement;
       'composants.carte-horizontale': ComposantsCarteHorizontale;

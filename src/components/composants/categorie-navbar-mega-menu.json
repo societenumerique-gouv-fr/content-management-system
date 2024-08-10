@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_composants_categorie_navbar_mega_menus",
+  "info": {
+    "displayName": "Categorie-Navbar-Mega-Menu",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre_de_la_categorie": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "page_cible": {
+      "type": "string"
+    }
+  }
+}

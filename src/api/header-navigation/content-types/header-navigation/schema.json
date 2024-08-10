@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "header_navigations",
+  "info": {
+    "singularName": "header-navigation",
+    "pluralName": "header-navigations",
+    "displayName": "Header_navigation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Navbar_navigation_items": {
+      "type": "dynamiczone",
+      "components": [
+        "composants.lien",
+        "composants.deroulant-navbar",
+        "composants.mega-menu-navbar"
+      ]
+    }
+  }
+}

@@ -1051,42 +1051,36 @@ export interface ApiHeaderHeader extends Schema.SingleType {
   };
 }
 
-export interface ApiNavigationNavigation extends Schema.CollectionType {
-  collectionName: 'navigations';
+export interface ApiHeaderNavigationHeaderNavigation extends Schema.SingleType {
+  collectionName: 'header_navigations';
   info: {
-    singularName: 'navigation';
-    pluralName: 'navigations';
-    displayName: 'Barre-de-Navigation';
+    singularName: 'header-navigation';
+    pluralName: 'header-navigations';
+    displayName: 'Header_navigation';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    lien_navbar: Attribute.DynamicZone<
-      ['composants.lien', 'composants.deroulant-navbar']
-    > &
-      Attribute.SetMinMax<
-        {
-          max: 1;
-        },
-        number
-      >;
-    titre: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.DefaultTo<'Mon Onglet'>;
+    Navbar_navigation_items: Attribute.DynamicZone<
+      [
+        'composants.lien',
+        'composants.deroulant-navbar',
+        'composants.mega-menu-navbar'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::navigation.navigation',
+      'api::header-navigation.header-navigation',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::navigation.navigation',
+      'api::header-navigation.header-navigation',
       'oneToOne',
       'admin::user'
     > &
@@ -1392,7 +1386,7 @@ declare module '@strapi/types' {
       'api::breve.breve': ApiBreveBreve;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
-      'api::navigation.navigation': ApiNavigationNavigation;
+      'api::header-navigation.header-navigation': ApiHeaderNavigationHeaderNavigation;
       'api::outils-et-dispositif.outils-et-dispositif': ApiOutilsEtDispositifOutilsEtDispositif;
       'api::page.page': ApiPagePage;
       'api::page-accueil.page-accueil': ApiPageAccueilPageAccueil;

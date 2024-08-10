@@ -339,41 +339,6 @@
          }
       }
    },
-   "GET /api/navigations": {
-      "content-type": "api::navigation.navigation",
-      "fields": [
-         "publishedAt",
-         "id",
-         "updatedAt",
-         "createdAt",
-         "titre"
-      ],
-      "populate": {
-         "lien_navbar": {
-            "on": {
-               "composants.deroulant-navbar": {
-                  "fields": [
-                     "titre_du_menu"
-                  ],
-                  "populate": {
-                     "liens": {
-                        "fields": [
-                           "titre_du_lien",
-                           "page_cible"
-                        ]
-                     }
-                  }
-               },
-               "composants.lien": {
-                  "fields": [
-                     "titre_du_lien",
-                     "page_cible"
-                  ]
-               }
-            }
-         }
-      }
-   },
    "GET /api/breves": {
       "content-type": "api::breve.breve",
       "fields": [
@@ -2000,6 +1965,56 @@
             "fields": [
                "url"
             ]
+         }
+      }
+   },
+   "GET /api/header-navigation": {
+      "content-type": "api::header-navigation.header-navigation",
+      "populate": {
+         "Navbar_navigation_items": {
+            "on": {
+               "composants.mega-menu-navbar": {
+                  "fields": [
+                     "titre_du_menu",
+                     "titre_editorialise",
+                     "texte_de_presentation"
+                  ],
+                  "populate": {
+                     "categories": {
+                        "fields": [
+                           "titre_de_la_categorie",
+                           "page_cible"
+                        ]
+                     },
+                     "liens": {
+                        "fields": [
+                           "titre_de_la_categorie",
+                           "titre_du_lien",
+                           "page_cible"
+                        ]
+                     }
+                  }
+               },
+               "composants.deroulant-navbar": {
+                  "fields": [
+                     "titre_du_menu"
+                  ],
+                  "populate": {
+                     "liens": {
+                        "fields": [
+                           "titre_du_lien",
+                           "page_cible"
+                        ]
+                     }
+                  }
+               },
+               "composants.lien": {
+                  "fields": [
+                     "titre_du_lien",
+                     "page_cible"
+                  ]
+               }
+            }
          }
       }
    }

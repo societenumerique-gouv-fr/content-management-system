@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_composants_mega_menu_navbars",
+  "info": {
+    "displayName": "Mega-Menu-Navbar",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre_du_menu": {
+      "type": "string",
+      "required": true
+    },
+    "titre_editorialise": {
+      "type": "string"
+    },
+    "texte_de_presentation": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "composants.categorie-navbar-mega-menu"
+    },
+    "liens": {
+      "type": "component",
+      "repeatable": true,
+      "component": "composants.lien-navbar-mega-menu"
+    }
+  }
+}
