@@ -49,6 +49,10 @@
     },
     "texte_de_la_carte": {
       "type": "text"
+    },
+    "nom_de_page": {
+      "type": "string",
+      "required": true
     }
   }
 }

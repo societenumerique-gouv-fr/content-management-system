@@ -953,6 +953,7 @@ export interface ApiBreveBreve extends Schema.CollectionType {
     type: Attribute.Enumeration<['breve']> &
       Attribute.Required &
       Attribute.DefaultTo<'breve'>;
+    nom_de_page: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1345,6 +1346,7 @@ export interface ApiRapportDeRechercheRapportDeRecherche
       Attribute.Required &
       Attribute.DefaultTo<'etude'>;
     texte_de_la_carte: Attribute.Text;
+    nom_de_page: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -349,7 +349,8 @@
          "createdAt",
          "updatedAt",
          "id",
-         "publishedAt"
+         "publishedAt",
+         "nom_de_page"
       ],
       "populate": {
          "image": {
@@ -957,7 +958,8 @@
          "updatedAt",
          "createdAt",
          "texte_de_la_carte",
-         "type"
+         "type",
+         "nom_de_page"
       ],
       "populate": {
          "composants": {
