@@ -47,6 +47,10 @@
         "composants.carte-deroulante",
         "composants.bandeau-titre"
       ]
+    },
+    "titre_de_page": {
+      "type": "string",
+      "required": true
     }
   }
 }

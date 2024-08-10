@@ -1200,6 +1200,7 @@ export interface ApiPagePage extends Schema.CollectionType {
         'composants.bandeau-titre'
       ]
     >;
+    titre_de_page: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

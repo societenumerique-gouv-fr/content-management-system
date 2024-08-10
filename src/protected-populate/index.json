@@ -6,7 +6,8 @@
          "createdAt",
          "updatedAt",
          "id",
-         "publishedAt"
+         "publishedAt",
+         "titre_de_page"
       ],
       "populate": {
          "Composants": {
