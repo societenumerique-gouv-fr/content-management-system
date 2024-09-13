@@ -29,12 +29,6 @@
       "type": "string",
       "default": "Votre description"
     },
-    "lien_du_label": {
-      "type": "string"
-    },
-    "titre_du_label": {
-      "type": "string"
-    },
     "transcription": {
       "type": "text"
     },

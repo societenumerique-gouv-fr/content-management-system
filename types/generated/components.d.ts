@@ -134,8 +134,6 @@ export interface ComposantsMedia extends Schema.Component {
       Attribute.Required &
       Attribute.DefaultTo<'Moyen'>;
     description: Attribute.String & Attribute.DefaultTo<'Votre description'>;
-    lien_du_label: Attribute.String;
-    titre_du_label: Attribute.String;
     transcription: Attribute.Text;
     transcription_ouverte: Attribute.Boolean &
       Attribute.Required &
