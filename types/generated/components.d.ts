@@ -541,9 +541,6 @@ export interface ComposantsCarteTelechargement extends Schema.Component {
     description: '';
   };
   attributes: {
-    type_de_carte: Attribute.Enumeration<['Classique', 'Tuile']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'Tuile'>;
     image_de_la_carte: Attribute.Media<'images'>;
     titre_de_la_carte: Attribute.String;
     description_de_la_carte: Attribute.String;
