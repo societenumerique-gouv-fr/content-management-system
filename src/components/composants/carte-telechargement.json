@@ -7,15 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "type_de_carte": {
-      "type": "enumeration",
-      "enum": [
-        "Classique",
-        "Tuile"
-      ],
-      "default": "Tuile",
-      "required": true
-    },
     "image_de_la_carte": {
       "type": "media",
       "multiple": false,
